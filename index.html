@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Datos Personales</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Botonera -->
+    <nav class="navbar bg-body-tertiary fixed-top">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Formulario de Pre-Inscripción</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+            <div class="offcanvas-header">
+              <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Acceso rápido</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+              <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#datos-personales">Datos Personales</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#domicilio">Domicilio</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#telefonos-correos">Teléfonos y Correo</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#licencia-conducir">Licencia de Conducir</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#estudios-academicos">Estudios Académicos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#finalizar">Finalizar</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+    </nav>
+
+    <form id="formulario" class="container mt-5 pt-5" novalidate>
+        <section id="datos-personales" class="form-section">
+            <h2>Datos Personales</h2>
+            <div class="mb-3">
+                <label for="carrera" class="form-label">Carrera</label>
+                <select id="carrera" class="form-control" name="Carrera" required>
+                    <option value="" disabled selected>Seleccione Carrera</option>
+                    <option value="Cadete">Cadete</option>
+                    <option value="Aspirante">Aspirante Agente</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="apellidos" class="form-label">Apellido/s</label>
+                <input type="text" class="form-control" id="apellidos" name="apellidos" placeholder="Ingrese Apellido/s" maxlength="20" required>
+            </div>
+            <div class="mb-3">
+                <label for="nombres" class="form-label">Nombre/s</label>
+                <input type="text" class="form-control" id="nombres" name="nombres" placeholder="Ingrese Nombre/s" maxlength="20" required>
+            </div>
+            <div class="mb-3">
+                <label for="documento" class="form-label">N° DNI</label>
+                <input type="number" class="form-control" id="documento" name="documento" placeholder="Ingrese N° DNI" oninput="maxLengthCheck(this)" maxlength="8" required>
+            </div>
+            <div class="mb-3">
+                <label for="cuil" class="form-label">CUIL</label>
+                <input type="text" class="form-control" id="cuil" name="cuil" placeholder="CUIL Nº: XX-XXXXXXXX-X" oninput="formatCUIL(this)" maxlength="13" required>
+            </div>
+            <div class="mb-3">
+                <label for="genero" class="form-label">Sexo</label>
+                <select name="genero" class="form-control" required>
+                    <option value="" disabled selected>Seleccione Sexo</option>
+                    <option value="Masculino">Masculino</option>
+                    <option value="Femenino">Femenino</option>
+                    <option value="Ninguno">Ninguno</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="fechaNacimiento" class="form-label">Fecha de Nacimiento</label>
+                <input type="date" class="form-control" id="fechaNacimiento" name="fechaNacimiento" onchange="calcularEdad()" required>
+            </div>
+            <div class="mb-3">
+                <label for="edad" class="form-label">Edad al 31 de Diciembre de 2024</label>
+                <input type="number" class="form-control" id="edad" name="edad" readonly>
+            </div>
+            <div class="mb-3">
+                <label for="paisNacimiento" class="form-label">País de Nacimiento</label>
+                <input type="text" class="form-control" id="paisNacimiento" name="paisNacimiento" placeholder="País de Nacimiento" maxlength="15" required>
+            </div>
+            <div class="mb-3">
+                <label for="estadoCivil" class="form-label">Estado Civil</label>
+                <input type="text" class="form-control" id="estadoCivil" name="estadoCivil" placeholder="Estado Civil" maxlength="12" required>
+            </div>
+            <div class="mb-3">
+                <label for="altura" class="form-label">Altura Aproximada (cm)</label>
+                <input type="number" class="form-control" id="altura" name="altura" placeholder="Altura Aproximada" maxlength="3" required>
+            </div>
+            <div class="mb-3">
+                <label for="peso" class="form-label">Peso Aproximado (kg)</label>
+                <input type="number" class="form-control" id="peso" name="peso" placeholder="Peso Aproximado" maxlength="5" required>
+            </div>
+            <div class="mb-3">
+                <label for="grupoSanguineo" class="form-label">Grupo y Factor Sanguíneo</label>
+                <select id="grupoSanguineo" class="form-control" name="grupoSanguineo" required>
+                    <option value="" disabled selected>Seleccione Grupo y Factor Sanguíneo</option>
+                    <option value="A+">A+</option>
+                    <option value="A-">A-</option>
+                    <option value="B+">B+</option>
+                    <option value="B-">B-</option>
+                    <option value="AB+">AB+</option>
+                    <option value="AB-">AB-</option>
+                    <option value="O+">O+</option>
+                    <option value="O-">O-</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="ocupacion" class="form-label">Ocupación</label>
+                <input type="text" class="form-control" id="ocupacion" name="ocupacion" placeholder="Ocupación" maxlength="20" required>
+            </div>
+        </section>
+
+        <section id="domicilio" class="form-section">
+            <h2>Domicilio</h2>
+            <div class="mb-3">
+                <label for="provincia" class="form-label">Provincia</label>
+                <input type="text" class="form-control" id="provincia" name="provincia" placeholder="Provincia" maxlength="20" required>
+            </div>
+            <div class="mb-3">
+                <label for="departamento" class="form-label">Departamento</label>
+                <input type="text" class="form-control" id="departamento" name="departamento" placeholder="Departamento" maxlength="20" required>
+            </div>
+            <div class="mb-3">
+                <label for="localidad" class="form-label">Localidad</label>
+                <input type="text" class="form-control" id="localidad" name="localidad" placeholder="Localidad" maxlength="20" required>
+            </div>
+            <div class="mb-3">
+                <label for="barrio" class="form-label">Barrio</label>
+                <input type="text" class="form-control" id="barrio" name="barrio" placeholder="Barrio" maxlength="20" required>
+            </div>
+            <div class="mb-3">
+                <label for="calle" class="form-label">Calle</label>
+                <input type="text" class="form-control" id="calle" name="calle" placeholder="Calle" maxlength="20" required>
+            </div>
+            <div class="mb-3">
+                <label for="numero" class="form-label">Número</label>
+                <input type="number" class="form-control" id="numero" name="numero" placeholder="Número" maxlength="10" required>
+            </div>
+            <div class="mb-3">
+                <label for="piso" class="form-label">Piso/Departamento</label>
+                <input type="text" class="form-control" id="piso" name="piso" placeholder="Piso/Departamento" maxlength="5">
+            </div>
+            <div class="mb-3">
+                <label for="referencia" class="form-label">Referencia</label>
+                <input type="text" class="form-control" id="referencia" name="referencia" placeholder="Referencia" maxlength="30">
+            </div>
+            <div class="mb-3">
+                <label for="codigoPostal" class="form-label">Código Postal</label>
+                <input type="number" class="form-control" id="codigoPostal" name="codigoPostal" placeholder="Código Postal" maxlength="5" required>
+            </div>
+        </section>
+
+        <section id="telefonos-correos" class="form-section">
+            <h2>Teléfonos y Correos</h2>
+            <div class="mb-3">
+                <label for="telefono" class="form-label">Teléfono Fijo</label>
+                <input type="text" class="form-control" id="telefono" name="telefono" placeholder="Teléfono Fijo" maxlength="10">
+            </div>
+            <div class="mb-3">
+                <label for="celular" class="form-label">Teléfono Celular</label>
+                <input type="text" class="form-control" id="celular" name="celular" placeholder="Teléfono Celular" maxlength="15" required>
+            </div>
+            <div class="mb-3">
+                <label for="correo" class="form-label">Correo Electrónico</label>
+                <input type="email" class="form-control" id="correo" name="correo" placeholder="Correo Electrónico" maxlength="30" required>
+            </div>
+
+        </section>
+
+        <section id="licencia-conducir" class="form-section">
+            <h2>Licencia de Conducir</h2>
+            <label for="licenciaConducir">¿Tiene Licencia de Conducir?</label>
+            <select id="licenciaConducir" class="form-control" name="licenciaConducir" onchange="mostrarCamposLicencia()">
+                <option value="no">No</option>
+                <option value="si">Sí</option>
+            </select>
+            <div id="camposLicencia" style="display: none;">
+                <select id="categorias" class="form-control" name="categorias" >
+                    <option value="comun">Común</option>
+                    <option value="profesional">Profesional</option>
+                </select>
+                <label for="categorias">Categoría:</label>
+                <select id="categorias" class="form-control" name="categorias" >
+                    <option value="A1">A1.3</option>
+                    <option value="A1">A1.4</option>
+                    <option value="A2">A2.1</option>
+                    <option value="B1">B1</option>
+                    <option value="B2">B2</option>
+                    <option value="D1">D1</option>
+                    <option value="D4">D4</option>
+                    <option value="otros">Otros</option>
+                </select>
+            </div>
+        </section>
+
+        <section id="estudios-academicos" class="form-section">
+            <h2>Estudios Académicos</h2>
+            <div class="mb-3">
+                <label for="nivelEstudios" class="form-label">Nivel de Estudios</label>
+                <select id="nivelEstudios" class="form-control" name="nivelEstudios" required>
+                    <option value="" disabled selected>Seleccione Nivel de Estudios</option>
+                    <option value="Primario">Primario</option>
+                    <option value="Secundario">Secundario</option>
+                    <option value="Terciario">Terciario</option>
+                    <option value="Universitario">Universitario</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="titulo" class="form-label">Título Obtenido</label>
+                <input type="text" class="form-control" id="titulo" name="titulo" placeholder="Título Obtenido" maxlength="30" required>
+            </div>
+            <div class="mb-3">
+                <label for="institucion" class="form-label">Institución</label>
+                <input type="text" class="form-control" id="institucion" name="institucion" placeholder="Institución" maxlength="30" required>
+            </div>
+            <div class="mb-3">
+                <label for="anioEgreso" class="form-label">Año de Egreso</label>
+                <input type="number" class="form-control" id="anioEgreso" name="anioEgreso" placeholder="Año de Egreso" maxlength="4" required>
+            </div>
+        </section>
+
+        <section id="finalizar" class="form-section">
+            <h2>Finalizar</h2>
+            <div class="mb-3">
+                <button type="submit" class="btn btn-primary">Enviar</button>
+            </div>
+        </section>
+        </section>
+    </form>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="scripts.js"></script>
+</body>
+</html>
+
