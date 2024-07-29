@@ -85,3 +85,31 @@ function maxLengthCheck(object) {
         object.value = object.value.slice(0, object.maxLength);
     }
 }
+
+
+function mostrarCamposIdioma() {
+    const idiomaConocido = document.getElementById('idiomaConocido').value;
+    const camposIdioma = document.getElementById('camposIdioma');
+
+    if (idiomaConocido === 'si') {
+        camposIdioma.style.display = 'block';
+    } else {
+        camposIdioma.style.display = 'none';
+    }
+}
+
+document.getElementById('idiomaConocido').addEventListener('change', mostrarCamposIdioma);
+
+function mostrarCamposRelacion() {
+    const relacionSelect = document.getElementById('relacion-select').value;
+    const camposRelacion = document.getElementById('campos-relacion');
+
+    if (relacionSelect === 'si') {
+        camposRelacion.style.display = 'block';
+    } else {
+        camposRelacion.style.display = 'none';
+    }
+}
+
+// Asegúrate de agregar el oyente de eventos para la sección de relación
+document.getElementById('relacion-select').addEventListener('change', mostrarCamposRelacion);
