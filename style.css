@@ -38,3 +38,34 @@ form button {
 .offcanvas-backdrop {
     background-color: rgba(0, 0, 0, 0.5) !important; /* Ajusta la transparencia del fondo */
 }
+
+
+.card {
+    border: 2px solid #007bff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.card-header {
+    background-color: #007bff;
+    color: white;
+    border-bottom: 2px solid #0056b3;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+.card-body {
+    padding: 20px;
+}
+.card-body h4 {
+    margin-top: 20px;
+    color: #007bff;
+}
+.img-fluid {
+    max-width: 80%;
+    height: auto;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.d-flex {
+    justify-content: center;
+}

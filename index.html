@@ -22,7 +22,9 @@
             </div>
             <div class="offcanvas-body">
               <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-
+                <li class="nav-item">
+                    <a class="nav-link" href="#recomendaciones">Recomendaciones</a>
+                  </li>
                 <li class="nav-item">
                   <a class="nav-link" href="#datos-personales">Datos Personales</a>
                 </li>
@@ -55,7 +57,38 @@
           </div>
         </div>
     </nav>
-
+    <br>
+    <br>
+    <!-- Sección de Recomendaciones -->
+    <div class="container my-4">
+        <div class="card">
+            <div id="recomendaciones" class="card-header">
+                <h2>Recomendaciones y Requisitos</h2>
+            </div>
+            <div class="card-body">
+                <p>Por medio de la presente se le informa que, acorde a lo establecido en el Protocolo de Ingreso, Usted deberá reunir las siguientes condiciones mínimas:</p>
+                <div>
+                    <h4>Tatuajes / Piercings:</h4>
+                    <p>No posee piercings ni tatuajes visibles al uso del uniforme.</p>
+                    <p>Los tatuajes visibles son todos aquellos que se encuentren en:</p>
+                    <ul>
+                        <li>Miembro superior: desde los 2/3 inferior del brazo hasta la mano inclusive.</li>
+                        <li>Miembro inferior: desde la rodilla hasta el pie.</li>
+                        <li>Cuello y cabeza: No podrán tener tatuajes.</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Altura:</h4>
+                    <p>Hombres: Mínima 1.65 m</p>
+                    <p>Mujeres: Mínima 1.60 m</p>
+                </div>
+                <p>Asimismo, se le informa que todas las etapas del proceso de ingreso son excluyentes, lo que significa que de no aprobar alguna de ellas, su trámite será desestimado.</p>
+            </div>
+            <div class="d-flex my-3">
+                <img src="./img/ficha.png" class="img-fluid" alt="Descripción de la imagen">
+            </div>
+        </div>
+    </div>
     <form id="formulario" class="container mt-5 pt-5" novalidate>
         <section id="datos-personales" class="form-section">
             <h2>Datos Personales</h2>
@@ -132,7 +165,7 @@
             </div>
             <div class="mb-3">
                 <label for="ocupacion" class="form-label">Ocupación</label>
-                <input type="text" class="form-control" id="ocupacion" name="ocupacion" placeholder="Ocupación" maxlength="20" required>
+                <input type="text" class="form-control" id="ocupacion" name="ocupacion" placeholder="Ocupación" maxlength="30" required>
             </div>
         </section>
 
@@ -152,11 +185,11 @@
             </div>
             <div class="mb-3">
                 <label for="barrio" class="form-label">Barrio</label>
-                <input type="text" class="form-control" id="barrio" name="barrio" placeholder="Barrio" maxlength="20" required>
+                <input type="text" class="form-control" id="barrio" name="barrio" placeholder="Barrio" maxlength="25" required>
             </div>
             <div class="mb-3">
                 <label for="calle" class="form-label">Calle</label>
-                <input type="text" class="form-control" id="calle" name="calle" placeholder="Calle" maxlength="20" required>
+                <input type="text" class="form-control" id="calle" name="calle" placeholder="Calle" maxlength="25" required>
             </div>
             <div class="mb-3">
                 <label for="numero" class="form-label">Número</label>
@@ -180,11 +213,11 @@
             <h2>Teléfonos y Correos</h2>
             <div class="mb-3">
                 <label for="telefono" class="form-label">Teléfono Fijo</label>
-                <input type="text" class="form-control" id="telefono" name="telefono" placeholder="Teléfono Fijo" maxlength="10">
+                <input type="number" class="form-control" id="telefono" name="telefono" placeholder="Teléfono Fijo" maxlength="10">
             </div>
             <div class="mb-3">
                 <label for="celular" class="form-label">Teléfono Celular</label>
-                <input type="text" class="form-control" id="celular" name="celular" placeholder="Teléfono Celular" maxlength="15" required>
+                <input type="number" class="form-control" id="celular" name="celular" placeholder="Teléfono Celular" maxlength="15" required>
             </div>
             <div class="mb-3">
                 <label for="correo" class="form-label">Correo Electrónico</label>
@@ -233,7 +266,7 @@
             </div>
             <div class="mb-3">
                 <label for="titulo" class="form-label">Título Obtenido</label>
-                <input type="text" class="form-control" id="titulo" name="titulo" placeholder="Título Obtenido" maxlength="30" required>
+                <input type="text" class="form-control" id="titulo" name="titulo" placeholder="Título Obtenido" maxlength="50" required>
             </div>
             <div class="mb-3">
                 <label for="institucion" class="form-label">Institución</label>
@@ -299,16 +332,16 @@
                 <input type="text" class="form-control" id="vinculo" name="vinculo" placeholder="Padre, Madre, Hermano" maxlength="15">
             </div>
             <div class="mb-3">
-                <label for="tipo-documento" class="form-label">Nº Documento:</label>
-                <input type="number" class="form-control" id="tipo-documento" name="tipo-documento" placeholder="DNI 12345678" maxlength="8">
+                <label for="documento" class="form-label">Nº Documento:</label>
+                <input type="number" class="form-control" id="documento" name="documento" placeholder="DNI 12345678" maxlength="8">
             </div>
             <div class="mb-3">
                 <label for="apellidos" class="form-label">Apellidos:</label>
-                <input type="text" class="form-control" id="apellidos" placeholder="Ingrese Apeliido/s" name="apellidos" maxlength="30">
+                <input type="text" class="form-control" id="apellidos" placeholder="Ingrese Apeliido/s del vinculo" name="apellidos" maxlength="30">
             </div>
             <div class="mb-3">
                 <label for="nombres" class="form-label">Nombres:</label>
-                <input type="text" class="form-control" id="nombres" placeholder="Ingrese Nombre/s" name="nombres" maxlength="30">
+                <input type="text" class="form-control" id="nombres" placeholder="Ingrese Nombre/s del vinculo" name="nombres" maxlength="30">
             </div>
             <div class="mb-3">
                 <label for="genero" class="form-label">Género:</label>
@@ -323,7 +356,7 @@
             </div>
             <div class="mb-3">
                 <label for="lugar-nacimiento" class="form-label">Lugar de Nacimiento:</label>
-                <input type="text" class="form-control" id="lugar-nacimiento" name="lugar-nacimiento" placeholder="Pais - Provincia" maxlength="50">
+                <input type="text" class="form-control" id="lugar-nacimiento" name="lugar-nacimiento" placeholder="Pais" maxlength="50">
             </div>
             <div class="mb-3">
                 <label for="contacto" class="form-label">Numero de contacto</label>
