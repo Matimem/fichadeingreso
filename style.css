@@ -6,6 +6,7 @@ body {
     margin-bottom: 20px;
 }
 
+
 .container {
     margin-top: 100px; /* Ajustar para dar espacio a la navbar fija */
 }
@@ -32,12 +33,28 @@ form button {
         max-width: 60% !important; 
         background-color: rgba(255, 255, 255, 0.9) !important; /* Ajusta la transparencia */
     }
+    .navbar-brand {
+        font-size: 1rem; /* Ajusta el tamaño de la fuente si es necesario */
+        margin-right: 0;
+    }
+    .navbar-toggler {
+        padding: 0.25rem 0.5rem;
+    }
+    .container-fluid {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
 }
 
 /* Ajusta la opacidad del fondo del offcanvas */
 .offcanvas-backdrop {
     background-color: rgba(0, 0, 0, 0.5) !important; /* Ajusta la transparencia del fondo */
 }
+
+.offcanvas-end .offcanvas-body {
+    padding: 20px; /* Ajusta el padding según sea necesario */
+}
+
 
 
 .card {
@@ -69,3 +86,5 @@ form button {
 .d-flex {
     justify-content: center;
 }
+
+

@@ -9,18 +9,20 @@
 </head>
 <body>
     <!-- Botonera -->
-    <nav class="navbar bg-body-tertiary fixed-top">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top">
         <div class="container-fluid">
-          <a class="navbar-brand" href="#">Formulario de Pre-Inscripción</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
-            <div class="offcanvas-header">
-              <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Acceso rápido</h5>
-              <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            <div class="d-flex justify-content-between align-items-center w-100">
+                <a class="navbar-brand" href="#">Formulario de Pre-Inscripción</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
             </div>
-            <div class="offcanvas-body">
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Acceso rápido</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
               <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
                 <li class="nav-item">
                     <a class="nav-link" href="#recomendaciones">Recomendaciones</a>
@@ -59,6 +61,7 @@
     </nav>
     <br>
     <br>
+ 
     <!-- Sección de Recomendaciones -->
     <div class="container my-4">
         <div class="card">
@@ -102,11 +105,11 @@
             </div>
             <div class="mb-3">
                 <label for="apellidos" class="form-label">Apellido/s</label>
-                <input type="text" class="form-control" id="apellidos" name="apellidos" placeholder="Ingrese Apellido/s" maxlength="20" required>
+                <input type="text" class="form-control" id="apellidos" name="apellidos" placeholder="Ingrese Apellido/s" oninput="maxLengthCheck(this)" maxlength="25" required>
             </div>
             <div class="mb-3">
                 <label for="nombres" class="form-label">Nombre/s</label>
-                <input type="text" class="form-control" id="nombres" name="nombres" placeholder="Ingrese Nombre/s" maxlength="20" required>
+                <input type="text" class="form-control" id="nombres" name="nombres" placeholder="Ingrese Nombre/s" oninput="maxLengthCheck(this)" maxlength="25" required>
             </div>
             <div class="mb-3">
                 <label for="documento" class="form-label">N° DNI</label>
@@ -135,19 +138,19 @@
             </div>
             <div class="mb-3">
                 <label for="paisNacimiento" class="form-label">País de Nacimiento</label>
-                <input type="text" class="form-control" id="paisNacimiento" name="paisNacimiento" placeholder="País de Nacimiento" maxlength="15" required>
+                <input type="text" class="form-control" id="paisNacimiento" name="paisNacimiento" placeholder="País de Nacimiento" oninput="maxLengthCheck(this)" maxlength="15" required>
             </div>
             <div class="mb-3">
                 <label for="estadoCivil" class="form-label">Estado Civil</label>
-                <input type="text" class="form-control" id="estadoCivil" name="estadoCivil" placeholder="Estado Civil" maxlength="12" required>
+                <input type="text" class="form-control" id="estadoCivil" name="estadoCivil" placeholder="Estado Civil" oninput="maxLengthCheck(this)" maxlength="12" required>
             </div>
             <div class="mb-3">
                 <label for="altura" class="form-label">Altura Aproximada (cm)</label>
-                <input type="number" class="form-control" id="altura" name="altura" placeholder="Altura Aproximada" maxlength="3" required>
+                <input type="number" class="form-control" id="altura" name="altura" placeholder="Altura Aproximada" oninput="maxLengthCheck(this)" maxlength="3" required>
             </div>
             <div class="mb-3">
                 <label for="peso" class="form-label">Peso Aproximado (kg)</label>
-                <input type="number" class="form-control" id="peso" name="peso" placeholder="Peso Aproximado" maxlength="5" required>
+                <input type="number" class="form-control" id="peso" name="peso" placeholder="Peso Aproximado" oninput="maxLengthCheck(this)" maxlength="5" required>
             </div>
             <div class="mb-3">
                 <label for="grupoSanguineo" class="form-label">Grupo y Factor Sanguíneo</label>
@@ -165,7 +168,7 @@
             </div>
             <div class="mb-3">
                 <label for="ocupacion" class="form-label">Ocupación</label>
-                <input type="text" class="form-control" id="ocupacion" name="ocupacion" placeholder="Ocupación" maxlength="30" required>
+                <input type="text" class="form-control" id="ocupacion" name="ocupacion" placeholder="Ocupación" oninput="maxLengthCheck(this)" maxlength="30" required>
             </div>
         </section>
 
@@ -173,39 +176,39 @@
             <h2>Domicilio</h2>
             <div class="mb-3">
                 <label for="provincia" class="form-label">Provincia</label>
-                <input type="text" class="form-control" id="provincia" name="provincia" placeholder="Provincia" maxlength="20" required>
+                <input type="text" class="form-control" id="provincia" name="provincia" placeholder="Provincia" oninput="maxLengthCheck(this)" maxlength="20" required>
             </div>
             <div class="mb-3">
                 <label for="departamento" class="form-label">Departamento</label>
-                <input type="text" class="form-control" id="departamento" name="departamento" placeholder="Departamento" maxlength="20" required>
+                <input type="text" class="form-control" id="departamento" name="departamento" placeholder="Departamento" oninput="maxLengthCheck(this)" maxlength="20" required>
             </div>
             <div class="mb-3">
                 <label for="localidad" class="form-label">Localidad</label>
-                <input type="text" class="form-control" id="localidad" name="localidad" placeholder="Localidad" maxlength="20" required>
+                <input type="text" class="form-control" id="localidad" name="localidad" placeholder="Localidad" oninput="maxLengthCheck(this)" maxlength="20" required>
             </div>
             <div class="mb-3">
                 <label for="barrio" class="form-label">Barrio</label>
-                <input type="text" class="form-control" id="barrio" name="barrio" placeholder="Barrio" maxlength="25" required>
+                <input type="text" class="form-control" id="barrio" name="barrio" placeholder="Barrio" oninput="maxLengthCheck(this)" maxlength="25" required>
             </div>
             <div class="mb-3">
                 <label for="calle" class="form-label">Calle</label>
-                <input type="text" class="form-control" id="calle" name="calle" placeholder="Calle" maxlength="25" required>
+                <input type="text" class="form-control" id="calle" name="calle" placeholder="Calle" oninput="maxLengthCheck(this)" maxlength="25" required>
             </div>
             <div class="mb-3">
                 <label for="numero" class="form-label">Número</label>
-                <input type="number" class="form-control" id="numero" name="numero" placeholder="Número" maxlength="10" required>
+                <input type="number" class="form-control" id="numero" name="numero" placeholder="Número" oninput="maxLengthCheck(this)" maxlength="10" required>
             </div>
             <div class="mb-3">
                 <label for="piso" class="form-label">Piso/Departamento</label>
-                <input type="text" class="form-control" id="piso" name="piso" placeholder="Piso/Departamento" maxlength="5">
+                <input type="text" class="form-control" id="piso" name="piso" placeholder="Piso/Departamento" oninput="maxLengthCheck(this)" maxlength="5">
             </div>
             <div class="mb-3">
                 <label for="referencia" class="form-label">Referencia</label>
-                <input type="text" class="form-control" id="referencia" name="referencia" placeholder="Referencia" maxlength="30">
+                <input type="text" class="form-control" id="referencia" name="referencia" placeholder="Referencia" oninput="maxLengthCheck(this)" maxlength="30">
             </div>
             <div class="mb-3">
                 <label for="codigoPostal" class="form-label">Código Postal</label>
-                <input type="number" class="form-control" id="codigoPostal" name="codigoPostal" placeholder="Código Postal" maxlength="5" required>
+                <input type="number" class="form-control" id="codigoPostal" name="codigoPostal" placeholder="Código Postal" oninput="maxLengthCheck(this)" maxlength="5" required>
             </div>
         </section>
 
@@ -213,15 +216,15 @@
             <h2>Teléfonos y Correos</h2>
             <div class="mb-3">
                 <label for="telefono" class="form-label">Teléfono Fijo</label>
-                <input type="number" class="form-control" id="telefono" name="telefono" placeholder="Teléfono Fijo" maxlength="10">
+                <input type="number" class="form-control" id="telefono" name="telefono" placeholder="Teléfono Fijo" oninput="maxLengthCheck(this)" maxlength="12">
             </div>
             <div class="mb-3">
                 <label for="celular" class="form-label">Teléfono Celular</label>
-                <input type="number" class="form-control" id="celular" name="celular" placeholder="Teléfono Celular" maxlength="15" required>
+                <input type="number" class="form-control" id="celular" name="celular" placeholder="Teléfono Celular" oninput="maxLengthCheck(this)" maxlength="12" required>
             </div>
             <div class="mb-3">
                 <label for="correo" class="form-label">Correo Electrónico</label>
-                <input type="email" class="form-control" id="correo" name="correo" placeholder="Correo Electrónico" maxlength="30" required>
+                <input type="email" class="form-control" id="correo" name="correo" placeholder="Correo Electrónico" oninput="maxLengthCheck(this)" maxlength="40" required>
             </div>
 
         </section>
@@ -266,19 +269,19 @@
             </div>
             <div class="mb-3">
                 <label for="titulo" class="form-label">Título Obtenido</label>
-                <input type="text" class="form-control" id="titulo" name="titulo" placeholder="Título Obtenido" maxlength="50" required>
+                <input type="text" class="form-control" id="titulo" name="titulo" placeholder="Título Obtenido" oninput="maxLengthCheck(this)" maxlength="50" required>
             </div>
             <div class="mb-3">
                 <label for="institucion" class="form-label">Institución</label>
-                <input type="text" class="form-control" id="institucion" name="institucion" placeholder="Institución" maxlength="30" required>
+                <input type="text" class="form-control" id="institucion" name="institucion" placeholder="Institución" oninput="maxLengthCheck(this)" maxlength="30" required>
             </div>
             <div class="mb-3">
                 <label for="especialidad" class="form-label">Especialidad</label>
-                <input type="text" class="form-control" id="especialidad" name="especialidad" placeholder="Especialidad" maxlength="30" required>
+                <input type="text" class="form-control" id="especialidad" name="especialidad" placeholder="Especialidad" oninput="maxLengthCheck(this)" maxlength="30" required>
             </div>
             <div class="mb-3">
                 <label for="anioEgreso" class="form-label">Año de Egreso</label>
-                <input type="number" class="form-control" id="anioEgreso" name="anioEgreso" placeholder="Año de Egreso" maxlength="4" required>
+                <input type="number" class="form-control" id="anioEgreso" name="anioEgreso" placeholder="Año de Egreso" oninput="maxLengthCheck(this)" maxlength="4" required>
             </div>
         </section>
 
@@ -295,7 +298,7 @@
             <div id="camposIdioma" style="display: none;">
                 <div class="mb-3">
                     <label for="idioma" class="form-label">Idioma:</label>
-                    <input type="text" class="form-control" id="idioma" name="idioma" placeholder="Ejemplo: Inglés" maxlength="15" required>
+                    <input type="text" class="form-control" id="idioma" name="idioma" placeholder="Ejemplo: Inglés" oninput="maxLengthCheck(this)" maxlength="20" required>
                 </div>
                 <div class="mb-3">
                     <label for="nivel" class="form-label">Nivel:</label>
@@ -320,7 +323,7 @@
             <div id="campos-relacion" style="display: none;">
                 <div class="mb-3">
                     <label for="detalles-relacion" class="form-label">Detalles:</label>
-                    <input type="text" class="form-control" id="detalles-relacion" name="detalles-relacion" placeholder="Indique detalles" maxlength="20">
+                    <input type="text" class="form-control" id="detalles-relacion" name="detalles-relacion" placeholder="Indique detalles" oninput="maxLengthCheck(this)" maxlength="25">
                 </div>
             </div>
         </section>
@@ -329,19 +332,19 @@
             <h2>Datos de Familiar</h2>
             <div class="mb-3">
                 <label for="vinculo" class="form-label">Vínculo:</label>
-                <input type="text" class="form-control" id="vinculo" name="vinculo" placeholder="Padre, Madre, Hermano" maxlength="15">
+                <input type="text" class="form-control" id="vinculo" name="vinculo" placeholder="Padre, Madre, Hermano" oninput="maxLengthCheck(this)" maxlength="15">
             </div>
             <div class="mb-3">
                 <label for="documento" class="form-label">Nº Documento:</label>
-                <input type="number" class="form-control" id="documento" name="documento" placeholder="DNI 12345678" maxlength="8">
+                <input type="number" class="form-control" id="documento" name="documento" placeholder="DNI 12345678" oninput="maxLengthCheck(this)" maxlength="8">
             </div>
             <div class="mb-3">
                 <label for="apellidos" class="form-label">Apellidos:</label>
-                <input type="text" class="form-control" id="apellidos" placeholder="Ingrese Apeliido/s del vinculo" name="apellidos" maxlength="30">
+                <input type="text" class="form-control" id="apellidos" placeholder="Ingrese Apeliido/s del vinculo" name="apellidos" oninput="maxLengthCheck(this)" maxlength="30">
             </div>
             <div class="mb-3">
                 <label for="nombres" class="form-label">Nombres:</label>
-                <input type="text" class="form-control" id="nombres" placeholder="Ingrese Nombre/s del vinculo" name="nombres" maxlength="30">
+                <input type="text" class="form-control" id="nombres" placeholder="Ingrese Nombre/s del vinculo" name="nombres" oninput="maxLengthCheck(this)" maxlength="30">
             </div>
             <div class="mb-3">
                 <label for="genero" class="form-label">Género:</label>
@@ -360,7 +363,7 @@
             </div>
             <div class="mb-3">
                 <label for="contacto" class="form-label">Numero de contacto</label>
-                <input type="number" class="form-control" id="contacto" placeholder="264-4446909" name="numero-contacto" maxlength="15">
+                <input type="number" class="form-control" id="contacto" placeholder="Codigo de Area + numero " name="numero-contacto" oninput="maxLengthCheck(this)" maxlength="12">
             </div>
             <div class="mb-3">
                 <label for="apellidos-padre" class="form-label">Apellidos y Nombres del Padre:</label>

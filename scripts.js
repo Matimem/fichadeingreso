@@ -113,3 +113,5 @@ function mostrarCamposRelacion() {
 
 // Asegúrate de agregar el oyente de eventos para la sección de relación
 document.getElementById('relacion-select').addEventListener('change', mostrarCamposRelacion);
+
+
