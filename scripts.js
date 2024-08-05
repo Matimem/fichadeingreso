@@ -54,7 +54,7 @@ document.getElementById('cuil').addEventListener('input', function() {
 function calcularEdad() {
     const fechaNacimiento = document.getElementById('fechaNacimiento').value;
     const edadInput = document.getElementById('edad');
-    const fechaFin = new Date('2024-12-31');
+    const fechaFin = new Date('2025-3-31');
     const nacimiento = new Date(fechaNacimiento);
 
     let edad = fechaFin.getFullYear() - nacimiento.getFullYear();
@@ -101,8 +101,8 @@ function mostrarCamposIdioma() {
 document.getElementById('idiomaConocido').addEventListener('change', mostrarCamposIdioma);
 
 function mostrarCamposRelacion() {
-    const relacionSelect = document.getElementById('relacion-select').value;
-    const camposRelacion = document.getElementById('campos-relacion');
+    const relacionSelect = document.getElementById('relacion_select').value;
+    const camposRelacion = document.getElementById('campos_relacion');
 
     if (relacionSelect === 'si') {
         camposRelacion.style.display = 'block';
